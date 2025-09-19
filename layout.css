@@ -1,0 +1,137 @@
+main {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* start*/
+
+@media (width>=800px) {
+  main {
+    display: grid;
+  }
+  .order {
+    order: -1;
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .grid_1-1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px;
+  }
+
+  .noah_fisk {
+    height: 474px;
+  }
+
+  .sommerhus_drone {
+    height: 474px;
+  }
+
+  .mand_farmen {
+    height: 474px;
+  }
+
+  .mand_kaffe {
+    height: 474px;
+  }
+
+  .thailand {
+    height: 474px;
+  }
+
+  .sushi {
+    height: 474px;
+  }
+
+  .solo_fisk {
+    height: 474px;
+  }
+
+  .kaffeplante {
+    height: 474px;
+  }
+
+  .far_vin {
+    height: 474px;
+  }
+
+  .fisk {
+    height: 474px;
+  }
+
+  .heli_ski {
+    height: 474px;
+  }
+
+  .far_ski {
+    height: 474px;
+  }
+
+  .thomas_fisk {
+    height: 474px;
+  }
+
+  .lilou {
+    height: 474px;
+  }
+
+  .sauna {
+    height: 474px;
+  }
+
+  .stol_sommerhus {
+    height: 474px;
+  }
+
+  .hugo_fisk {
+    height: 474px;
+  }
+
+  .vin_mark {
+    height: 474px;
+  }
+
+  .mor_thomas {
+    height: 474px;
+  }
+
+  .arsenal {
+    height: 474px;
+  }
+
+  .fod {
+    height: 474px;
+  }
+
+  .thomas_heli {
+    height: 474px;
+  }
+
+  .sne_hjem {
+    height: 474px;
+  }
+
+  .valdisere {
+    height: 474px;
+  }
+}

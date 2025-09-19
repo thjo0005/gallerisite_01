@@ -1,0 +1,191 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Apple-inspireret baggrund ===== */
+body.index {
+  /* Typografi og layout */
+  min-height: 100svh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+    system-ui, sans-serif;
+  color: #0a0a0a;
+
+  /* Lys, blød gradient (macOS vibes) */
+  background: linear-gradient(135deg, #f7f8fa 0%, #e9edf3 35%, #d9e1ec 100%);
+}
+
+/* Automatisk dark mode, hvis brugerens system er mørkt */
+@media (prefers-color-scheme: dark) {
+  body.index {
+    color: #f5f5f7;
+    background: radial-gradient(
+      1200px 800px at 20% -10%,
+      #2a2a2e 0%,
+      #1c1c1f 40%,
+      #0f0f12 100%
+    );
+  }
+}
+
+/* Et let “glass”-panel til dit main-indhold */
+body.index main {
+  background: color-mix(in srgb, #ffffff 18%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, #ffffff 30%, transparent);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  padding: clamp(12px, 2.5vw, 24px);
+  margin: clamp(12px, 3vw, 40px) auto;
+}
+
+/* ===== Generelt layout ===== */
+main {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+/* Titel */
+.grid_1-1 h1 {
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-align: center;
+  margin-block: clamp(8px, 2vw, 16px);
+}
+
+/* Galleriet */
+.grid_1-1-1-1 {
+  display: grid;
+  gap: clamp(8px, 1vw, 16px);
+
+  /* Fleksibelt antal kolonner der “snapper” lækkert */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+}
+
+/* Hvert kort (din eksisterende struktur: div > img + p) */
+.grid_1-1-1-1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: color-mix(in srgb, #ffffff 24%, transparent);
+  border: 1px solid color-mix(in srgb, #ffffff 30%, transparent);
+  border-radius: 14px;
+  overflow: clip;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid_1-1-1-1 > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+/* Billeder – beskær pænt uden at strække */
+.grid_1-1-1-1 img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* ens visuel rytme */
+  object-fit: cover; /* beskær i stedet for at strække */
+  display: block;
+}
+
+/* Tekst under billede (caption) */
+.grid_1-1-1-1 p {
+  padding: 10px 12px 14px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* Stor skærm: lidt større kort */
+@media (width >= 900px) {
+  .grid_1-1-1-1 img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+.grid_1-1-1-1 > div:hover img {
+  filter: brightness(1.05);
+}
+
+/* H1 start */
+/* Sørger for at main fylder hele skærmen og centrerer indholdet */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111; /* mørk baggrund for kontrast */
+  margin: 0;
+}
+
+/* Glas-look til overskriften */
+.glass-title {
+  padding: 20px 60px;
+  font-size: clamp(26px, 6vw, 52px);
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif; /* enkel skrifttype */
+
+  /* Glas-look */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  /* Highlight og skygger */
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 4px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+/* H1 slut */
+
+/*start footer*/
+.glass-footer {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  border-radius: 40px;
+
+  /* Glass-effekt */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Let skygge */
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    0 4px 8px rgba(0, 0, 0, 0.35);
+
+  /* Placering */
+  display: block;
+  text-align: center;
+}
+
+/* Sørg for at footeren sidder i bunden */
+body.index {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.index main {
+  flex: 1;
+}
